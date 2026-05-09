@@ -1,5 +1,15 @@
 # Polyformalism Turbo-Shell
 
+
+## Meta
+
+**Domain:** constraint-theory
+**Depends on:** —
+**Depended by:** —
+**Implements:** Multi-model creative cognition engine shell — neuroscience-informed debate proto...
+**Related:** —
+
+
 **A neuroscience-informed MCP server that turns any AI agent into a creative cognition engine.**
 
 Multi-formalism creative thinking, backed by real brain network research. Your agent generates ideas, evaluates them, routes between techniques, and scores insights — all through a structured protocol that mirrors how the human brain actually produces creative breakthroughs.
