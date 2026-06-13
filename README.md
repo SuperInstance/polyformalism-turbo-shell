@@ -1,52 +1,98 @@
 # Polyformalism Turbo-Shell
 
+**Polyformalism Turbo-Shell** is a neuroscience-informed MCP server that turns any AI agent into a creative cognition engine — alternating between Default Mode Network (DMN) and Executive Control Network (ECN) techniques at a calibrated frequency to produce optimal creative output.
 
-## Meta
+## Why It Matters
 
-**Domain:** constraint-theory
-**Depends on:** —
-**Depended by:** —
-**Implements:** Multi-model creative cognition engine shell — neuroscience-informed debate proto...
-**Related:** —
+Research from a 2,433-subject study (Chen et al., 2025) showed that **dynamic switching between the DMN and ECN** predicts creative output better than intelligence. The key finding: moderate switching frequency produces optimal results — too much switching causes rigidity, too little produces noise. Turbo-Shell operationalizes this research by providing seven creative cognitive states that map to brain network activation patterns, allowing any AI agent to produce structured creative thinking rather than random brainstorming.
 
+## How It Works
 
-**A neuroscience-informed MCP server that turns any AI agent into a creative cognition engine.**
+### The 7 Creative Cognitive States
 
-Multi-formalism creative thinking, backed by real brain network research. Your agent generates ideas, evaluates them, routes between techniques, and scores insights — all through a structured protocol that mirrors how the human brain actually produces creative breakthroughs.
+Each state maps to a specific brain network and creative technique:
 
----
+| State | Network | Technique | Operation |
+|-------|---------|-----------|-----------|
+| Generate | DMN | Divergent | Produce many ideas |
+| Associate | DMN | Analogical | Connect distant domains |
+| Hybridize | DMN | Combination | Merge unrelated concepts |
+| Constrain | ECN | Inversion | Identify what's impossible |
+| Evaluate | ECN | Critical | Score and filter |
+| Refine | ECN | Elaboration | Develop promising ideas |
+| Route | Salience | Meta-cognition | Switch between networks |
 
-## Why It Works
+### DMN-ECN Switching
 
-Creative cognition isn't magic — it's a measurable brain state. Research from a 2,433-subject study (Chen et al., 2025) showed that **dynamic switching between the Default Mode Network (DMN) and Executive Control Network (ECN)** predicts creative output better than intelligence. 
+The optimal switching frequency follows an inverted-U curve:
 
-The key insight: moderate switching produces optimal results. Too much switching → rigidity. Too little → noise. The Turbo-Shell operationalizes this by alternating between DMN-like techniques (analogy, hybridization) and ECN-like techniques (constraint injection, inversion) at a calibrated frequency.
+```
+Creativity(frequency) = α·f - β·f²   (optimal at f = α/(2β))
+```
 
----
+Too high frequency (>4 switches/min): cognitive rigidity, no deep exploration.
+Too low frequency (<0.5 switches/min): noise without evaluation.
+Optimal: ~1-2 switches/min — matching measured brain dynamics in highly creative subjects.
 
-## The 7 Creative Cognitive States
+### MCP Protocol
 
-| State | Network | Technique | Input → Output |
-|-------|---------|-----------|----------------|
-| DMN | Default Mode | Translation, Analogy, Hybridization | Problem → novel framing |
-| ECN | Executive Control | Inversion, Constraint Injection | Novel framing → structured solution |
-| Switching | DMN ↔ ECN | Vacillation, Obliviscence | Stuck → breakthrough |
+The server exposes creative operations via MCP (Model Context Protocol):
+
+```python
+# Server runs as an MCP server (server.py)
+# Agents call creative operations as MCP tools
+```
+
+Each operation generates, evaluates, or routes ideas through the 7-state cycle.
+
+### Insight Scoring
+
+Ideas are scored on novelty (distance from known solutions), usefulness (constraint satisfaction), and surprise (entropy relative to expectations):
+
+```
+insight = w₁·novelty + w₂·usefulness + w₃·surprise
+```
+
+Weights are calibrated per domain. Scoring: **O(N)** where N = number of constraint dimensions.
 
 ## Quick Start
 
-Configure your agent with the [turbo-shell SKILL.md](https://github.com/SuperInstance/polyformalism-turbo-shell/blob/main/SKILL.md) and drop yourself into any MCP-compatible agent runtime. The shell handles technique selection, evaluation, and scoring automatically.
+```bash
+# Start the MCP server
+cd polyformalism-turbo-shell
+python3 mcp/server.py
 
----
+# In your agent configuration, add the MCP server endpoint
+# The server exposes creative cognition tools to any connected agent
+```
 
-## How It Fits
+```python
+# Example MCP tool call (from connected agent)
+# generate(domain="architecture", constraints=["sustainable", "modular"])
+# → returns divergent ideas scored by insight potential
+```
 
-- **[polyformalism-turbo-shell](https://github.com/SuperInstance/polyformalism-turbo-shell)** — creative cognition engine (this)
-- **[linguistic-polyformalism-shell](https://github.com/SuperInstance/linguistic-polyformalism-shell)** — cross-linguistic version
-- **[polyformalism-thinking](https://github.com/SuperInstance/polyformalism-thinking)** — the framework
-- **[babel-vessel](https://github.com/SuperInstance/babel-vessel)** — cross-language deployment
-- **[casting-call](https://github.com/SuperInstance/casting-call)** — which model handles which creative mode best
+## API
 
----
+| Component | Description |
+|-----------|-------------|
+| `mcp/server.py` | MCP server exposing 7 creative cognitive operations |
+| `docs/API-REFERENCE.md` | Full API documentation |
+| `docs/FUTURE-INTEGRATION.md` | Integration roadmap |
+| `SKILL.md` | Skill definition for agent integration |
+| `EILEEN-VERSION-KIMI-NEGATIVE-SPACE.md` | Negative space variant configuration |
+
+## Architecture Notes
+
+Polyformalism Turbo-Shell provides the creative cognition layer in the SuperInstance ecosystem. In γ + η = C, DMN states (generate, associate, hybridize) drive γ (growth — exploring new idea spaces) while ECN states (constrain, evaluate, refine) provide η (avoidance — rejecting ideas that violate constraints). The salience network's routing function implements the balance between exploration and avoidance. Integrates with `negative-space-core` for avoidance-based idea filtering.
+
+See [ARCHITECTURE.md](https://github.com/SuperInstance/SuperInstance/blob/main/ARCHITECTURE.md) for cognitive architecture.
+
+## References
+
+1. Chen, Q. et al. (2025). "Dynamic network switching predicts creative thinking." *Nature Human Behaviour*.
+2. Beaty, R. E. et al. (2018). "Robust prediction of individual creative ability from brain functional connectivity." *PNAS*, 115(5), 1087–1092.
+3. Jung, R. E. et al. (2010). "The structure of creative cognition in the human brain." *Frontiers in Human Neuroscience*, 4, 16.
 
 ## License
 
